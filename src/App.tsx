@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+/* eslint-disable tailwindcss/no-custom-classname */
+import './styles/global.css';
 
-function App() {
+import { Fragment } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+import DefaultLayout from './layouts/DefaultLayout';
+import { privateRoutes, publicRoutes } from './routes';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="__app">
+        <Routes>
+          {[...privateRoutes, ...publicRoutes].map((route, i) => {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            let Layout: any;
+
+            if (route.layout !== undefined) {
+              Layout = route.layout;
+            } else if (route.layout === null) {
+              Layout = Fragment;
+            } else {
+              Layout = DefaultLayout;
+            }
+
+            const Page = route.component;
+
+            return (
+              <Route
+                key={i}
+                path={route.path}
+                element={
+                  <Layout>
+                    <Page />
+                  </Layout>
+                }
+              />
+            );
+          })}
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;

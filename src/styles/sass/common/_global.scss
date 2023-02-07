@@ -1,0 +1,49 @@
+body {
+  --tw-bg-opacity: 1;
+    background-color: rgb(17 23 41/var(--tw-bg-opacity));
+}
+
+// gradient
+.gradient-primary {
+  background-image: $gradientPrimary;
+}
+
+.gradient-primary-light {
+  background-image: $gradientPrimaryLight;
+}
+
+.gradient-text {
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.gradient-border {
+ border-image-slice: 1;
+ border-image-source: $gradientPrimary;
+ &.gradient-light {
+   border-image-source: $gradientPrimaryLight;
+ }
+}
+
+.gradient-to-right {
+  background-image: linear-gradient(to right, transparent, #fc6c8f, #ffb86c);
+}
+.gradient-to-left {
+  background-image: linear-gradient(to right, #ffb86c, #fc6c8f, transparent);
+}
+.gradient-to-top {
+  background-image: linear-gradient(to top, transparent, #fc6c8f, #ffb86c);
+}
+.gradient-to-bottom {
+  background-image: linear-gradient(to top, #ffb86c, #fc6c8f, transparent);
+}
+// end gradient
+
+// color text
+.text-desc {
+  @apply text-sm font-light text-slate-200 md:text-lg;
+}
+
+.title-sm {
+  @apply mb-2 text-base font-semibold text-white md:text-xl;
+}
+// color text

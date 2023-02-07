@@ -1,0 +1,6 @@
+.layout-container {
+  width: 100%;
+  max-width: var(--max-width-browser);
+  margin-inline: auto;
+  @apply px-4 md:px-14 bp1:px-0;
+}

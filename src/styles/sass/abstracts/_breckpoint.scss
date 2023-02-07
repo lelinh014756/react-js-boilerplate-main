@@ -1,0 +1,58 @@
+
+/* Mobile App */
+@mixin sm {
+    @media only screen and (min-width: $sm) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media only screen and (min-width: $md) {
+        @content;
+    }
+}
+@mixin lg {
+    @media only screen and (min-width: $lg) {
+        @content;
+    }
+}
+@mixin xl {
+    @media only screen and (min-width: $xl) {
+        @content;
+    }
+}
+@mixin xxl {
+    @media only screen and (min-width: $xxl) {
+        @content;
+    }
+}
+
+
+/* Website */
+// @mixin sm {
+//     @media only screen and (max-width: $sm) {
+//         @content;
+//     }
+// }
+
+// @mixin md {
+//     @media only screen and (max-width: $md) {
+//         @content;
+//     }
+// }
+// @mixin lg {
+//     @media only screen and (max-width: $lg) {
+//         @content;
+//     }
+// }
+// @mixin xl {
+//     @media only screen and (max-width: $xl) {
+//         @content;
+//     }
+// }
+// @mixin xxl {
+//     @media only screen and (max-width: $xxl) {
+//         @content;
+//     }
+// }
+
