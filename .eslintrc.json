@@ -59,7 +59,9 @@
         "unused-imports/no-unused-vars": [
           "error",
           { "argsIgnorePattern": "^_" }
-        ]
+        ],
+        "key-spacing": "off",
+        "@typescript-eslint/key-spacing": "off"
       }
     },
     // Configuration for testing

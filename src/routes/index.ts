@@ -1,14 +1,9 @@
-import Home from '../pages/Home';
-import Login from '../pages/Login';
+import { useRoutes } from 'react-router-dom';
 
-interface RoutesData {
-  path: string;
-  component: () => JSX.Element;
-  layout?: () => JSX.Element;
+import MainRoutes from './MainRoutes';
+
+function Routes() {
+  return useRoutes([MainRoutes]);
 }
 
-const publicRoutes: RoutesData[] = [{ path: '/login', component: Login }];
-
-const privateRoutes: RoutesData[] = [{ path: '/', component: Home }];
-
-export { privateRoutes, publicRoutes };
+export default Routes;

@@ -1,46 +1,27 @@
 /* eslint-disable tailwindcss/no-custom-classname */
 import './styles/global.css';
+import './styles/sass/index.scss';
 
-import { Fragment } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import NavigationScroll from '@layouts/NavigationScroll';
+import { CssBaseline, StyledEngineProvider } from '@mui/material';
+import { ThemeProvider } from '@mui/material/styles';
+import { useAppSelector } from '@redux/hook';
 
-import DefaultLayout from './layouts/DefaultLayout';
-import { privateRoutes, publicRoutes } from './routes';
+import Routes from './routes';
+import theme from './theme/index';
 
 const App = () => {
+  const customization = useAppSelector((state) => state.customization);
+
   return (
-    <Router>
-      <div className="__app">
-        <Routes>
-          {[...privateRoutes, ...publicRoutes].map((route, i) => {
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            let Layout: any;
-
-            if (route.layout !== undefined) {
-              Layout = route.layout;
-            } else if (route.layout === null) {
-              Layout = Fragment;
-            } else {
-              Layout = DefaultLayout;
-            }
-
-            const Page = route.component;
-
-            return (
-              <Route
-                key={i}
-                path={route.path}
-                element={
-                  <Layout>
-                    <Page />
-                  </Layout>
-                }
-              />
-            );
-          })}
-        </Routes>
-      </div>
-    </Router>
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={theme(customization)}>
+        <CssBaseline />
+        <NavigationScroll>
+          <Routes />
+        </NavigationScroll>
+      </ThemeProvider>
+    </StyledEngineProvider>
   );
 };
 
