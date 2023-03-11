@@ -12,7 +12,8 @@
       "@shared/*": ["src/shared/*"],
       "@modules/*": ["src/modules/*"],
       "@core/*": ["src/core/*"],
-      "@views/*": ["src/views/*"]
+      "@views/*": ["src/views/*"],
+      "@hooks/*": ["src/hooks/*"]
     }
   }
 }
