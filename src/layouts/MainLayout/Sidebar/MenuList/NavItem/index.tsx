@@ -99,7 +99,11 @@ const NavItem = ({ item, level }: NavItemProps) => {
       .toString()
       .split('/')
       .findIndex((id) => id === item.id);
-    if (currentIndex > -1 && pathname.includes(item.url ?? 'not_url')) {
+    if (
+      currentIndex > -1 &&
+      pathname.includes(item.url ?? 'not_url') &&
+      !isOpenStore.includes(item.id)
+    ) {
       dispatch(menuOpen(item.id));
     }
     // eslint-disable-next-line

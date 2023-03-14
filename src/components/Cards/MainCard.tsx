@@ -90,20 +90,6 @@ const MainCard = forwardRef(
   }
 );
 
-// MainCard.propTypes = {
-//   border: PropTypes.bool,
-//   boxShadow: PropTypes.bool,
-//   children: PropTypes.node,
-//   content: PropTypes.bool,
-//   contentClass: PropTypes.string,
-//   contentSX: PropTypes.object,
-//   darkTitle: PropTypes.bool,
-//   secondary: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
-//   shadow: PropTypes.string,
-//   sx: PropTypes.object,
-//   title: PropTypes.string,
-// };
-
 MainCard.displayName = 'MainCard';
 
 export default MainCard;

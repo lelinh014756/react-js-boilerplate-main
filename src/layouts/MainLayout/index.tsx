@@ -22,6 +22,7 @@ import {
   navItemDrawerCloseSize,
   tabletPadding,
 } from '@shared/constant';
+import { memo } from 'react';
 // import { setMenu } from '@redux/slice/customizationSlice';
 import { Outlet } from 'react-router-dom';
 
@@ -78,6 +79,10 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
 
 // ==============================|| MAIN LAYOUT ||============================== //
 
+const OutletMemo = memo(Outlet);
+
+OutletMemo.displayName = 'OutletMemo';
+
 function MainLayout() {
   const themeData = useTheme();
 
@@ -129,7 +134,7 @@ function MainLayout() {
           title
           rightAlign
         />
-        <Outlet />
+        <OutletMemo />
       </Main>
       <Customization />
     </Box>

@@ -197,11 +197,11 @@ export default function componentStyleOverrides(theme: ThemeOptionType) {
       styleOverrides: {
         root: {
           '.MuiTableSortLabel-icon': {
-            display: 'none',
+            opacity: '0.2',
           },
-          '&.Mui-active .MuiTableSortLabel-icon': {
-            display: 'block',
-          },
+          //   '&.Mui-active .MuiTableSortLabel-icon': {
+          //     display: 'block',
+          //   },
         },
       },
     },

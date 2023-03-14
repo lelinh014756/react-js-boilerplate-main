@@ -10,11 +10,11 @@ import {
   Tooltip,
 } from '@mui/material';
 import { type Order } from '@shared/utils/handlerComparator';
+import EnhancedTableHead from '@views/user/list/listStyle1/EnhancedTableHead';
 import TableBodyView from '@views/user/list/listStyle1/TableBodyView';
 import React, { useState } from 'react';
 
 import { rows } from './data/listData1';
-import EnhancedTableHead from './EnhancedTableHead';
 import { type ListStyle1Data } from './type';
 
 function ListStyle1() {
@@ -25,7 +25,7 @@ function ListStyle1() {
   const [orderBy, setOrderBy] = React.useState<keyof ListStyle1Data>('Id');
   const [page, setPage] = React.useState(0);
 
-  const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  const [rowsPerPage, setRowsPerPage] = React.useState(8);
 
   const numSelected = selected.length > 0;
 

@@ -62,13 +62,13 @@ function Customization() {
   let initialFont;
 
   switch (fontFamilyStore) {
-    case `'Inter', sans-serif`:
+    case `Inter, sans-serif`:
       initialFont = 'Inter';
       break;
-    case `'Poppins', sans-serif`:
+    case `Poppins, sans-serif`:
       initialFont = 'Poppins';
       break;
-    case `'Roboto', sans-serif`:
+    case `Roboto, sans-serif`:
     default:
       initialFont = 'Roboto';
       break;
@@ -81,14 +81,14 @@ function Customization() {
     let newFont;
     switch (fontFamily) {
       case 'Inter':
-        newFont = `'Inter', sans-serif`;
+        newFont = `Inter, sans-serif`;
         break;
       case 'Poppins':
-        newFont = `'Poppins', sans-serif`;
+        newFont = `Poppins, sans-serif`;
         break;
       case 'Roboto':
       default:
-        newFont = `'Roboto', sans-serif`;
+        newFont = `Roboto, sans-serif`;
         break;
     }
     dispatch(setFontFamilyStore(newFont));

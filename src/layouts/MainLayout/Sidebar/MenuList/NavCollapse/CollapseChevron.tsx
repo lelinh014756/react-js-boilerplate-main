@@ -9,14 +9,13 @@ interface Props {
 
 function CollapseChevron({ opened, isAddCss }: Props) {
   return (
-    <div className={isAddCss ? 'ml-5' : ''}>
+    <>
       {opened ? (
         <IconChevronUp
           strokeWidth={1.5}
           width="1rem"
+          className={isAddCss ? 'ml-5' : ''}
           style={{
-            marginTop: 'auto',
-            marginBottom: 'auto',
             ...(isAddCss && {
               rotate: '90deg',
             }),
@@ -25,7 +24,7 @@ function CollapseChevron({ opened, isAddCss }: Props) {
       ) : (
         <IconChevronDown strokeWidth={1.5} width="1rem" />
       )}
-    </div>
+    </>
   );
 }
 

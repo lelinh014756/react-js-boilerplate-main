@@ -20,12 +20,19 @@ import * as yup from 'yup';
 import { type RegisterFormData } from '../type';
 import RegisterFormContext from './RegisterFormContext';
 
+// var
+const minLength = 6;
+
 // schema
 const schema = yup
   .object({
     fullName: yup.string().trim().required('fullName is required'),
     userName: yup.string().trim().required('Email or UserName is required'),
-    password: yup.string().trim().required('Password is required'),
+    password: yup
+      .string()
+      .trim()
+      .required('Password is required')
+      .min(minLength, `Please enter at least ${minLength} characters`),
   })
   .required();
 
