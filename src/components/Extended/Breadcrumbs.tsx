@@ -2,7 +2,14 @@ import IconTallymark1 from '@assets/svg/IconTallymark1';
 import { AccountTreeTwoTone } from '@mui/icons-material';
 import HomeIcon from '@mui/icons-material/Home';
 import HomeTwoToneIcon from '@mui/icons-material/HomeTwoTone';
-import { Box, Card, Divider, Grid, Typography } from '@mui/material';
+import {
+  Box,
+  Card,
+  Divider,
+  Grid,
+  Typography,
+  useMediaQuery,
+} from '@mui/material';
 import MuiBreadcrumbs from '@mui/material/Breadcrumbs';
 import { useTheme } from '@mui/material/styles';
 import config from '@shared/config';
@@ -51,6 +58,9 @@ function Breadcrumbs({
 
   const [main, setMain] = useState<MenuItem | null>(null);
   const [item, setItem] = useState<MenuChildrenItem | null>(null);
+
+  const mathDownMd = useMediaQuery(theme.breakpoints.down('md'));
+  const mathDownSm = useMediaQuery(theme.breakpoints.down('sm'));
 
   // set active item state
   const getCollapse = (menu: MenuItem) => {
@@ -131,7 +141,9 @@ function Breadcrumbs({
       breadcrumbContent = (
         <Card
           sx={{
-            marginBottom: !card ? 0 : theme.spacing(gridSpacing),
+            marginBottom: !card
+              ? 0
+              : theme.spacing(mathDownSm ? 1 : mathDownMd ? 2 : gridSpacing),
             border: card && border ? '1px solid' : 'none',
             borderColor: theme.palette.primary['200'] + String(75),
             background: !card

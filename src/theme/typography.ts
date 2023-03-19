@@ -3,6 +3,13 @@
  * @param {JsonObject} theme theme customization object
  */
 
+import {
+  matchDownMd,
+  matchDownSm,
+  mobilePadding,
+  tabletPadding,
+} from '@shared/constant';
+
 import { type ThemeOptionType, type TypographyCustomization } from './type';
 
 export default function themeTypography(
@@ -100,6 +107,16 @@ export default function themeTypography(
       marginRight: '20px',
       borderRadius: `${String(theme?.customization?.borderRadius)}px`,
       overflow: 'hidden',
+      [`${matchDownMd}`]: {
+        minHeight: 'calc(100vh - 80px)',
+        marginTop: '80px',
+        padding: `${tabletPadding}px`,
+        marginInline: `${tabletPadding}px`,
+      },
+      [`${matchDownSm}`]: {
+        padding: `${mobilePadding}px`,
+        marginInline: '0',
+      },
     },
     menuCaption: {
       fontSize: '0.875rem',

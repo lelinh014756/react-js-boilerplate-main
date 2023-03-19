@@ -16,12 +16,7 @@ import {
 import { useAppDispatch, useAppSelector } from '@redux/hook';
 import { opened } from '@redux/selector/customizationSelector';
 import { setMenu } from '@redux/slice/customizationSlice';
-import {
-  drawerWidth,
-  mobilePadding,
-  navItemDrawerCloseSize,
-  tabletPadding,
-} from '@shared/constant';
+import { drawerWidth, navItemDrawerCloseSize } from '@shared/constant';
 import { memo } from 'react';
 // import { setMenu } from '@redux/slice/customizationSlice';
 import { Outlet } from 'react-router-dom';
@@ -42,18 +37,9 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
       }),
       [theme.breakpoints.up('md')]: {
         marginLeft: -(drawerWidth - (navItemDrawerCloseSize + 20)),
-        // width: `calc(100% - ${drawerWidth}px)`,
       },
       [theme.breakpoints.down('md')]: {
-        marginInline: `${tabletPadding}px`,
-        // width: `calc(100% - ${drawerWidth}px)`,
         width: '100%',
-        padding: `${tabletPadding}px`,
-      },
-      [theme.breakpoints.down('sm')]: {
-        marginInline: `${mobilePadding}px`,
-        // width: `calc(100% - ${drawerWidth}px)`,
-        padding: `${tabletPadding}px`,
       },
     }),
     ...(open && {
@@ -67,11 +53,6 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
       width: `calc(100% - ${drawerWidth}px)`,
       [theme.breakpoints.down('md')]: {
         width: `100%`,
-        marginInline: `${tabletPadding}px`,
-        padding: `${tabletPadding}px`,
-      },
-      [theme.breakpoints.down('sm')]: {
-        marginInline: `${mobilePadding}px`,
       },
     }),
   })

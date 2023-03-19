@@ -1,4 +1,9 @@
-import { matchUpMd } from '@shared/constant';
+import {
+  matchDownMd,
+  matchDownSm,
+  matchUpMd,
+  tabletPadding,
+} from '@shared/constant';
 
 import { type ThemeOptionType } from './type';
 
@@ -31,10 +36,16 @@ export default function componentStyleOverrides(theme: ThemeOptionType) {
         root: {
           color: theme.textDark,
           padding: '24px',
+          [`${matchDownMd}`]: {
+            padding: `${tabletPadding}px`,
+          },
         },
         title: {
           fontSize: '20px',
-          fontWeight: 600,
+          fontWeight: 500,
+          [`${matchDownSm}`]: {
+            fontSize: '18px',
+          },
         },
       },
     },
@@ -197,14 +208,24 @@ export default function componentStyleOverrides(theme: ThemeOptionType) {
       styleOverrides: {
         root: {
           '.MuiTableSortLabel-icon': {
-            opacity: '0.2',
+            opacity: '0.65',
           },
-          //   '&.Mui-active .MuiTableSortLabel-icon': {
-          //     display: 'block',
-          //   },
+          '&.Mui-active .MuiTableSortLabel-icon': {
+            color: theme.colors.primaryMain,
+          },
         },
       },
     },
+    /* Dialog */
+    MuiDialogTitle: {
+      styleOverrides: {
+        root: {
+          fontSize: '1.25rem',
+          fontWeight: 500,
+        },
+      },
+    },
+    /* End Dialog */
     /* Table */
     MuiTableCell: {
       styleOverrides: {
