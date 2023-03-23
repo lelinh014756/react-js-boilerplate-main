@@ -34,7 +34,6 @@ export default function componentStyleOverrides(theme: ThemeOptionType) {
         },
         title: {
           fontSize: '20px',
-          fontWeight: 600,
         },
       },
     },

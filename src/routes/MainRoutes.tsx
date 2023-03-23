@@ -1,5 +1,9 @@
 import MainLayout from '@layouts/MainLayout';
 import Home from '@pages/Home';
+import Advance from '@pages/UIAdvance';
+import Uploader from '@pages/UIAdvance/Uploader';
+import UIBasic from '@pages/UIBasic';
+import Progress from '@pages/UIBasic/Progress';
 import User from '@pages/User';
 import List from '@pages/User/List';
 import ListStyle1 from '@pages/User/List/ListStyle1';
@@ -28,6 +32,26 @@ const MainRoutes: RouteObject = {
               element: <div>list 2</div>,
             },
           ],
+        },
+      ],
+    },
+    {
+      path: 'advance',
+      element: <Advance />,
+      children: [
+        {
+          path: 'uploader',
+          element: <Uploader />,
+        },
+      ],
+    },
+    {
+      path: 'basic',
+      element: <UIBasic />,
+      children: [
+        {
+          path: 'progress',
+          element: <Progress />,
         },
       ],
     },
