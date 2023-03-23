@@ -73,5 +73,13 @@ export default function themePalette(
       paper: theme.paper,
       default: theme.backgroundDefault,
     },
+    hightLight: {
+      white: {
+        '800': theme.colors.whiteHightLight800,
+      },
+      black: {
+        '450': theme.colors.blackHightLight450,
+      },
+    },
   };
 }

@@ -9,7 +9,7 @@ const uiElement: MenuItem = {
   type: 'group',
   children: [
     {
-      id: 'ui-advance',
+      id: 'advance',
       title: 'Advance',
       type: 'collapse',
       icon: IconTools,
@@ -23,13 +23,13 @@ const uiElement: MenuItem = {
       ],
     },
     {
-      id: 'ui-basic',
+      id: 'basic',
       title: 'Basic',
       type: 'collapse',
       icon: IconBrush,
       children: [
         {
-          id: 'progress-bar',
+          id: 'progress',
           title: 'Progress',
           type: 'item',
           url: '/basic/progress',

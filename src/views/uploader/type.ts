@@ -8,4 +8,5 @@ export type OnDropzone = <T extends File>(
 
 export interface FileItem extends File {
   preview?: string;
+  id: string;
 }

@@ -1,5 +1,6 @@
 import { CloudUpload } from '@mui/icons-material';
 import { Box, Typography } from '@mui/material';
+import createId from '@shared/utils/createId';
 import React, { type HTMLProps, memo, useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 
@@ -16,6 +17,7 @@ const UploadBox1 = ({ onUpload, ...props }: UploadBox1Props) => {
         acceptedFiles.map((file) =>
           Object.assign(file, {
             preview: URL.createObjectURL(file),
+            id: createId(),
           })
         )
       );
@@ -35,7 +37,7 @@ const UploadBox1 = ({ onUpload, ...props }: UploadBox1Props) => {
       gap="8px"
       alignItems="center"
       justifyContent="center"
-      sx={{ cursor: 'pointer', mb: '24px', p: '30px 0' }}
+      sx={{ cursor: 'pointer', mb: '24px', p: '30px 0', flexWrap: 'wrap' }}
       {...getRootProps({ className: 'dropzone' })}
     >
       <div>

@@ -9,10 +9,12 @@ import { type FileItem } from '../type';
 const UploaderPreview = () => {
   const [files, setFiles] = useState<FileItem[]>([]);
 
-  console.log(files);
-
   const onUpload = useCallback((data: FileItem[]) => {
     setFiles(data);
+  }, []);
+
+  const onDelete = useCallback((id: string) => {
+    console.log(id);
   }, []);
 
   return (
@@ -29,7 +31,7 @@ const UploaderPreview = () => {
         {validArray(files) &&
           files.map((file, index) => (
             <Grid key={index} item>
-              <ImgCard image={file.preview} />
+              <ImgCard image={file.preview} id={file.id} onDelete={onDelete} />
             </Grid>
           ))}
       </Grid>

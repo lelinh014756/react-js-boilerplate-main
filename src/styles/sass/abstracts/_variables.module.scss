@@ -77,6 +77,12 @@
   --darkTextTitle: #d7dcec;
   --darkTextPrimary: #bdc8f0;
   --darkTextSecondary: #8492c4;
+
+  // white hightLight
+  --whiteHightLight800: rgba(255,255,255,.8);
+  
+  // dark hightLight
+  --blackHightLight450: rgba(0,0,0,.45);
 }
 
 /* BreakPoint */
@@ -167,4 +173,10 @@ $xxl: 1536px;
   darkSecondaryDark: var(--darkSecondaryDark);
   darkSecondary200: var(--darkSecondary200);
   darkSecondary800: var(--darkSecondary800);
+
+  // white hightLight
+  whiteHightLight800: var(--whiteHightLight800);
+  
+  // black hightLight
+  blackHightLight450: var(--blackHightLight450);
 }

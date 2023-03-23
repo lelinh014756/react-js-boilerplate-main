@@ -65,6 +65,10 @@ export interface ThemeColorCustomization {
   readonly darkSecondaryDark: string;
   readonly darkSecondary200: string;
   readonly darkSecondary800: string;
+
+  readonly whiteHightLight800: string;
+
+  readonly blackHightLight450: string;
 }
 // end customization color
 
@@ -129,6 +133,14 @@ export interface PaletteOptionsCustomization {
     secondary: string;
     hint: string;
     dark: string;
+  };
+  hightLight: {
+    white: {
+      800: string;
+    };
+    black: {
+      450: string;
+    };
   };
   background: {
     paper: string;
