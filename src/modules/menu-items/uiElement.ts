@@ -15,16 +15,22 @@ const uiElement: MenuItem = {
       icon: IconTools,
       children: [
         {
-          id: 'uploader',
-          title: 'Uploader',
+          id: 'alert',
+          title: 'Alert',
           type: 'item',
-          url: '/advance/uploader',
+          url: '/advance/alert',
         },
         {
           id: 'dialog',
           title: 'Dialog',
           type: 'item',
           url: '/advance/dialog',
+        },
+        {
+          id: 'uploader',
+          title: 'Uploader',
+          type: 'item',
+          url: '/advance/uploader',
         },
       ],
     },

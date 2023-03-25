@@ -11,7 +11,7 @@ import {
 export interface AlertDialogProps {
   // main
   open: boolean;
-  dialogProps?: DialogProps;
+  dialogProps?: Omit<DialogProps, 'open' | 'onCLose'>;
   // title
   title?: string;
   titleProps?: DialogTitleProps;

@@ -5,6 +5,18 @@ import { type ThemeOptionType } from './type';
 export default function componentStyleOverrides(theme: ThemeOptionType) {
   const bgColor = theme.colors.grey50;
   return {
+    /* Alert */
+    MuiAlert: {
+      styleOverrides: {
+        root: {
+          '&.MuiDisabledIcon .MuiAlert-icon': {
+            display: 'none',
+          },
+        },
+      },
+    },
+    /* End Alert */
+
     MuiButton: {
       styleOverrides: {
         root: {
