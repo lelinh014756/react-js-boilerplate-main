@@ -20,6 +20,12 @@ const uiElement: MenuItem = {
           type: 'item',
           url: '/advance/uploader',
         },
+        {
+          id: 'dialog',
+          title: 'Dialog',
+          type: 'item',
+          url: '/advance/dialog',
+        },
       ],
     },
     {

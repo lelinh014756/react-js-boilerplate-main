@@ -1,6 +1,7 @@
 import MainLayout from '@layouts/MainLayout';
 import Home from '@pages/Home';
 import Advance from '@pages/UIAdvance';
+import Dialog from '@pages/UIAdvance/Dialog';
 import Uploader from '@pages/UIAdvance/Uploader';
 import UIBasic from '@pages/UIBasic';
 import Progress from '@pages/UIBasic/Progress';
@@ -42,6 +43,10 @@ const MainRoutes: RouteObject = {
         {
           path: 'uploader',
           element: <Uploader />,
+        },
+        {
+          path: 'dialog',
+          element: <Dialog />,
         },
       ],
     },

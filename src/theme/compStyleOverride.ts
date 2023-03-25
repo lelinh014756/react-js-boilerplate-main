@@ -20,6 +20,9 @@ export default function componentStyleOverrides(theme: ThemeOptionType) {
       styleOverrides: {
         root: {
           backgroundImage: 'none',
+          '&.MuiDialog-paper': {
+            paddingBlock: 12,
+          },
         },
         rounded: {
           borderRadius: `${String(theme?.customization?.borderRadius)}px`,
@@ -204,6 +207,23 @@ export default function componentStyleOverrides(theme: ThemeOptionType) {
         },
       },
     },
+    /* Dialog */
+    MuiDialogTitle: {
+      styleOverrides: {
+        root: {
+          fontSize: '1.25rem',
+          fontWeight: 500,
+        },
+      },
+    },
+    MuiDialogActions: {
+      styleOverrides: {
+        root: {
+          paddingInline: 24,
+        },
+      },
+    },
+    /* End Dialog */
     /* Table */
     MuiTableCell: {
       styleOverrides: {
