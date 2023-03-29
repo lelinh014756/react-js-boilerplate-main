@@ -1,4 +1,7 @@
 import MainLayout from '@layouts/MainLayout';
+import ComponentsUI from '@pages/ComponentsUI';
+import Autocomplete from '@pages/ComponentsUI/Autocomplete';
+import Select from '@pages/ComponentsUI/Select';
 import Home from '@pages/Home';
 import Advance from '@pages/UIAdvance';
 import Alert from '@pages/UIAdvance/Alert';
@@ -34,6 +37,20 @@ const MainRoutes: RouteObject = {
               element: <div>list 2</div>,
             },
           ],
+        },
+      ],
+    },
+    {
+      path: 'components',
+      element: <ComponentsUI />,
+      children: [
+        {
+          path: 'select',
+          element: <Select />,
+        },
+        {
+          path: 'autocomplete',
+          element: <Autocomplete />,
         },
       ],
     },
