@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { type SubCardProps } from '@components/type';
+import { type SubCardProps } from '@components/Cards/types';
 import {
   Card,
   CardContent,

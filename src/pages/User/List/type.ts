@@ -1,4 +1,4 @@
-import { type StatusDataType } from '@core/type';
+import { type StatusDataType } from 'types/coreType';
 
 export interface ListStyle1Data {
   Id: string;

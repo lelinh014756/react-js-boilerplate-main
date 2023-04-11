@@ -1,5 +1,7 @@
 import IconChevronRight from '@assets/svg/IconChevronRight';
 import Breadcrumbs from '@components/Extended/Breadcrumbs';
+import Header from '@components/general/Header';
+import Sidebar from '@components/general/Sidebar';
 import Customization from '@layouts/Customization';
 // import Header from '@components/Header';
 import menuItems from '@modules/menu-items';
@@ -16,17 +18,9 @@ import {
 import { useAppDispatch, useAppSelector } from '@redux/hook';
 import { opened } from '@redux/selector/customizationSelector';
 import { setMenu } from '@redux/slice/customizationSlice';
-import {
-  drawerWidth,
-  mobilePadding,
-  navItemDrawerCloseSize,
-  tabletPadding,
-} from '@shared/constant';
+import { drawerWidth, navItemDrawerCloseSize } from '@shared/constant';
 // import { setMenu } from '@redux/slice/customizationSlice';
 import { Outlet } from 'react-router-dom';
-
-import Header from './Header';
-import Sidebar from './Sidebar';
 
 // styles
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
@@ -43,17 +37,6 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
         marginLeft: -(drawerWidth - (navItemDrawerCloseSize + 20)),
         // width: `calc(100% - ${drawerWidth}px)`,
       },
-      [theme.breakpoints.down('md')]: {
-        marginInline: `${tabletPadding}px`,
-        // width: `calc(100% - ${drawerWidth}px)`,
-        width: '100%',
-        padding: `${tabletPadding}px`,
-      },
-      [theme.breakpoints.down('sm')]: {
-        marginInline: `${mobilePadding}px`,
-        // width: `calc(100% - ${drawerWidth}px)`,
-        padding: `${tabletPadding}px`,
-      },
     }),
     ...(open && {
       transition: theme.transitions.create('margin', {
@@ -64,14 +47,6 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
       borderBottomRightRadius: 0,
       marginLeft: 0,
       width: `calc(100% - ${drawerWidth}px)`,
-      [theme.breakpoints.down('md')]: {
-        width: `100%`,
-        marginInline: `${tabletPadding}px`,
-        padding: `${tabletPadding}px`,
-      },
-      [theme.breakpoints.down('sm')]: {
-        marginInline: `${mobilePadding}px`,
-      },
     }),
   })
 );
@@ -91,6 +66,8 @@ function MainLayout() {
   const handleLeftDrawerToggle = () => {
     dispatch(setMenu(!leftDrawerOpened));
   };
+
+  console.log('run layout');
 
   return (
     <Box sx={{ display: 'flex' }}>

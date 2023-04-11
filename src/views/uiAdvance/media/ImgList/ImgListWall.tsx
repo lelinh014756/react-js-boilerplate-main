@@ -1,5 +1,5 @@
 import { Box, type BoxProps } from '@mui/material';
-import React from 'react';
+import React, { memo } from 'react';
 
 export interface ImgListWallProps extends BoxProps {}
 
@@ -19,4 +19,4 @@ const ImgListWall = ({ children, className, sx, ...props }: BoxProps) => {
   );
 };
 
-export default ImgListWall;
+export default memo(ImgListWall);

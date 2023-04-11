@@ -3,15 +3,24 @@
  * @param {JsonObject} theme Theme customization object
  */
 
-import { type PaletteOptionsCustomization, type ThemeOptionType } from './type';
+import {
+  type PaletteOptionsCustomization,
+  type ThemeOptionCustom,
+} from './type';
 
 export default function themePalette(
-  theme: ThemeOptionType
+  theme: ThemeOptionCustom
 ): PaletteOptionsCustomization {
+  const lightColor = '58, 53, 65';
+  const darkColor = '231, 227, 252';
+  const mainColor =
+    theme.customization.modeType === 'light' ? lightColor : darkColor;
+
   return {
     mode: theme.customization.modeType,
     common: {
       black: theme.colors.darkPaper,
+      main: mainColor,
     },
     primary: {
       light: theme.colors.primaryLight,

@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { type TransitionPropsCustom } from '@core/type/componentType';
 // material-ui
 import { Box, Collapse, Fade, Grow, Slide, Zoom } from '@mui/material';
 import React, { forwardRef } from 'react';
+import { type TransitionPropsCustom } from 'types/componentType';
 
 // ==============================|| TRANSITIONS ||============================== //
 

@@ -1,4 +1,4 @@
-import { type NotifyOption } from '@core/type/layoutType';
+import { type NotifyOption } from 'types/layoutType';
 
 const notifyStatus: NotifyOption[] = [
   {

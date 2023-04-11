@@ -1,9 +1,9 @@
 import { type OpenedStore, type OpenIdStore } from '@redux/type';
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
-import config, { type ConfigType } from '@shared/config';
+import themeConfig, { type ThemeConfig } from '@shared/configs/themeConfig';
 
 export type CustomizationStore = Pick<
-  ConfigType,
+  ThemeConfig,
   'fontFamily' | 'borderRadius'
 > & {
   isOpen: OpenIdStore[];
@@ -13,8 +13,8 @@ export type CustomizationStore = Pick<
 
 export const initialState: CustomizationStore = {
   isOpen: [], // for active default menu
-  fontFamily: config.fontFamily,
-  borderRadius: config.borderRadius,
+  fontFamily: themeConfig.fontFamily,
+  borderRadius: themeConfig.borderRadius,
   opened: true,
   modeType: 'light',
 };

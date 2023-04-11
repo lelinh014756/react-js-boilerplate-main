@@ -63,7 +63,7 @@ export const rows = [
     Country: 'Saucerize',
     Friends: 834,
     Followers: 2348,
-    Status: 'active',
+    Status: 'activated',
   }),
   createData({
     Id: '02',
@@ -125,7 +125,7 @@ export const rows = [
     Country: 'Alexburgh',
     Friends: 1782,
     Followers: 2433,
-    Status: 'active',
+    Status: 'activated',
   }),
   createData({
     Id: '07',

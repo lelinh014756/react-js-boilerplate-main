@@ -1,5 +1,5 @@
-import { type IconProps } from '@core/type';
 import React from 'react';
+import { type IconProps } from 'types/coreType';
 
 function IconTools(props: IconProps) {
   return (

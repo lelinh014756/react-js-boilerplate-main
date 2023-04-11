@@ -3,56 +3,61 @@
  * @param {JsonObject} theme theme customization object
  */
 
-import { type ThemeOptionType, type TypographyCustomization } from './type';
+import type { Theme } from '@mui/material/styles';
+import themeConfig from '@shared/configs/themeConfig';
+import { mobileSpacing, tabletSpacing } from '@shared/constant';
 
-export default function themeTypography(
-  theme: ThemeOptionType
-): TypographyCustomization {
+import { type TypographyCustomization } from './type';
+
+export default function themeTypography(theme: Theme): TypographyCustomization {
+  const hToolbarSm = themeConfig.toolbarHeightSm;
+  const hToolbarLg = themeConfig.toolbarHeightLg;
+
   return {
-    fontFamily: theme?.customization?.fontFamily,
+    fontFamily: theme?.optionCustom.customization?.fontFamily,
     h6: {
       fontWeight: 500,
-      color: theme.heading,
+      color: theme.optionCustom.heading,
       fontSize: '0.75rem',
     },
     h5: {
       fontSize: '0.875rem',
-      color: theme.heading,
+      color: theme.optionCustom.heading,
       fontWeight: 500,
     },
     h4: {
       fontSize: '1rem',
-      color: theme.heading,
+      color: theme.optionCustom.heading,
       fontWeight: 600,
     },
     h3: {
       fontSize: '1.25rem',
-      color: theme.heading,
+      color: theme.optionCustom.heading,
       fontWeight: 600,
     },
     h2: {
       fontSize: '1.5rem',
-      color: theme.heading,
+      color: theme.optionCustom.heading,
       fontWeight: 700,
     },
     h1: {
       fontSize: '2.125rem',
-      color: theme.heading,
+      color: theme.optionCustom.heading,
       fontWeight: 700,
     },
     subtitle1: {
       fontSize: '0.875rem',
       fontWeight: 500,
-      color: theme.textDark,
+      color: theme.optionCustom.textDark,
     },
     subtitle2: {
       fontSize: '0.75rem',
       fontWeight: 400,
-      color: theme.darkTextSecondary,
+      color: theme.optionCustom.darkTextSecondary,
     },
     caption: {
       fontSize: '0.75rem',
-      color: theme.darkTextSecondary,
+      color: theme.optionCustom.darkTextSecondary,
       fontWeight: 400,
     },
     body1: {
@@ -64,7 +69,7 @@ export default function themeTypography(
       letterSpacing: '0em',
       fontWeight: 400,
       lineHeight: '1.5em',
-      color: theme.darkTextPrimary,
+      color: theme.optionCustom.darkTextPrimary,
     },
     button: {
       textTransform: 'capitalize' as const,
@@ -75,7 +80,7 @@ export default function themeTypography(
       '& > label': {
         top: 23,
         left: 0,
-        color: theme.darkTextSecondary,
+        color: theme.optionCustom.darkTextSecondary,
         '&[data-shrink="false"]': {
           top: 5,
         },
@@ -91,20 +96,33 @@ export default function themeTypography(
       },
     },
     mainContent: {
-      backgroundColor: theme.background,
+      backgroundColor: theme.optionCustom.background,
       width: '100%',
-      minHeight: 'calc(100vh - 88px)',
       flexGrow: 1,
       padding: '20px',
-      marginTop: '88px',
       marginRight: '20px',
-      borderRadius: `${String(theme?.customization?.borderRadius)}px`,
+      borderRadius: `${String(theme.shape.borderRadius)}px`,
       overflow: 'hidden',
+      minHeight: `calc(100vh - ${hToolbarLg + 4}px)`,
+      marginTop: `${hToolbarLg + 4}px`,
+      [theme.breakpoints.down('md')]: {
+        minHeight: `calc(100vh - ${hToolbarLg}px)`,
+        marginTop: `${hToolbarLg}px`,
+        width: '100%',
+        marginInline: `${tabletSpacing}px`,
+        padding: `${tabletSpacing}px`,
+      },
+      [theme.breakpoints.down('sm')]: {
+        minHeight: `calc(100vh - ${hToolbarSm}px)`,
+        marginTop: `${hToolbarSm}px`,
+        padding: `${mobileSpacing}px`,
+        marginInline: 0,
+      },
     },
     menuCaption: {
       fontSize: '0.875rem',
       fontWeight: 500,
-      color: theme.heading,
+      color: theme.optionCustom.heading,
       padding: '6px',
       textTransform: 'capitalize',
       marginTop: '10px',
@@ -112,7 +130,7 @@ export default function themeTypography(
     subMenuCaption: {
       fontSize: '0.6875rem',
       fontWeight: 500,
-      color: theme.darkTextSecondary,
+      color: theme.optionCustom.darkTextSecondary,
       textTransform: 'capitalize',
     },
     commonAvatar: {

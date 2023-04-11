@@ -7,7 +7,7 @@ import React, {
   useRef,
 } from 'react';
 
-import { type AnimateButtonProps } from './type';
+import { type AnimateButtonProps, type ScaleVal } from './type';
 
 interface DivRef {}
 
@@ -17,8 +17,6 @@ const AnimateButton: ForwardRefRenderFunction<DivRef, AnimateButtonProps> = (
   { children, type = 'scale', direction = 'right', offset = 10, scale },
   ref
 ) => {
-  const { hover = 1, tap = 0.9 } = scale ?? {};
-
   const animateRef = useRef(null);
 
   useImperativeHandle(ref, () => ({
@@ -93,22 +91,32 @@ const AnimateButton: ForwardRefRenderFunction<DivRef, AnimateButtonProps> = (
       );
 
     case 'scale':
-    default:
+    default: {
+      const scaleVal: ScaleVal = {};
+
       if (typeof scale === 'number') {
-        scale = {
+        Object.assign(scaleVal, {
           hover: scale,
           tap: scale,
-        };
+        });
+      } else {
+        const { hover = 1, tap = 0.9 } = scale ?? {};
+
+        Object.assign(scaleVal, {
+          hover,
+          tap,
+        });
       }
       return (
         <motion.div
           ref={animateRef}
-          whileHover={{ scale: hover }}
-          whileTap={{ scale: tap }}
+          whileHover={{ scale: scaleVal.hover }}
+          whileTap={{ scale: scaleVal.tap }}
         >
           {children}
         </motion.div>
       );
+    }
   }
 };
 

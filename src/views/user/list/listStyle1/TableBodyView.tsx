@@ -11,7 +11,7 @@ import {
   useTheme,
 } from '@mui/material';
 import { type ListStyle1Data } from '@pages/User/List/type';
-import chipStatus from '@shared/chipStatus';
+import chipStatus from '@shared/helpers/chipStatus';
 import { getComparator, type Order } from '@shared/utils/handlerComparator';
 import stableSort from '@shared/utils/stableSort';
 import React, { memo } from 'react';

@@ -1,6 +1,16 @@
 import { type Typography } from '@mui/material/styles/createTypography';
 import { type CustomizationStore } from '@redux/slice/customizationSlice';
 
+// font family
+export type FontFamily = 'Inter' | 'Poppins' | 'Roboto';
+
+export interface FontFamilyOption {
+  key: FontFamily;
+  label: string;
+  value: string;
+}
+// end font family
+
 // customization color
 export interface ThemeColorCustomization {
   readonly paper: string;
@@ -77,6 +87,7 @@ export interface PaletteOptionsCustomization {
   mode: 'dark' | 'light';
   common: {
     black: string;
+    main: string;
   };
   primary: {
     light: string;
@@ -244,7 +255,7 @@ export type TypographyCustomization = Pick<
 >;
 // end customization typography
 
-export interface ThemeOptionType {
+export interface ThemeOptionCustom {
   colors: ThemeColorCustomization;
   heading: string;
   paper: string;
